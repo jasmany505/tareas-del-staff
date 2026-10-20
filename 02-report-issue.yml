@@ -1,0 +1,63 @@
+name: "⚠️ Reportar problema"
+description: "Reportar un bug, abuso o fallo operativo del servidor."
+title: "[INCIDENCIA] "
+labels: ["tipo: incidencia", "estado: pendiente"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Reporta solo información necesaria. No publiques IP privadas, tokens, contraseñas ni datos personales.
+  - type: dropdown
+    id: category
+    attributes:
+      label: Categoría
+      options:
+        - Minecraft / servidor
+        - Discord / bot
+        - Plugin / configuración
+        - Moderación
+        - Seguridad
+        - Otro
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Prioridad
+      options:
+        - "🔴 Urgente"
+        - "🟠 Alta"
+        - "🟡 Media"
+        - "🟢 Baja"
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Descripción
+      placeholder: "¿Qué ocurrió?"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Pasos para reproducir
+      placeholder: |
+        1. ...
+        2. ...
+    validations:
+      required: false
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidencias
+      description: "Añade logs redactados, capturas o enlaces. Elimina secretos y datos personales."
+    validations:
+      required: false
+  - type: input
+    id: reporter
+    attributes:
+      label: Reportado por (@usuario GitHub)
+      placeholder: "@usuario"
+    validations:
+      required: true
