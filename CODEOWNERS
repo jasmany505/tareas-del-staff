@@ -1,0 +1,7 @@
+# Sustituye los marcadores por los nombres de usuario reales de GitHub.
+# GitHub CODEOWNERS requiere @handles; los nombres visibles por sí solos no bastan.
+* @GITHUB_USER_JASMANY @GITHUB_USER_DORBEL @GITHUB_USER_DEKUTO
+
+# Ejemplo: asigna archivos de configuración a responsables técnicos:
+# .github/ @GITHUB_USER_DEVELOPER
+# scripts/ @GITHUB_USER_DEVELOPER

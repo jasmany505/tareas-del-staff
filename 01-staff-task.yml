@@ -1,0 +1,99 @@
+name: "✦ Nueva tarea del Staff"
+description: "Registrar una tarea oficial de KRONIX NETWORK."
+title: "[TAREA] "
+labels: ["tipo: tarea", "estado: pendiente"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## ✦ KRONIX NETWORK — Staff Task Manager
+        Describe la tarea con claridad. No incluyas contraseñas, tokens ni información privada.
+  - type: input
+    id: task_owner
+    attributes:
+      label: Responsable (usuario de GitHub)
+      description: "Escribe el @usuario que se encargará de la tarea."
+      placeholder: "@usuario"
+    validations:
+      required: true
+  - type: dropdown
+    id: staff_rank
+    attributes:
+      label: Rango responsable
+      options:
+        - Owner
+        - Admin
+        - Moderador
+        - Helper
+        - Builder
+        - Developer
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Prioridad
+      options:
+        - "🔴 Urgente"
+        - "🟠 Alta"
+        - "🟡 Media"
+        - "🟢 Baja"
+    validations:
+      required: true
+  - type: dropdown
+    id: task_type
+    attributes:
+      label: Área
+      options:
+        - Moderación
+        - Soporte
+        - Construcción
+        - Desarrollo
+        - Eventos
+        - Contenido
+        - Mantenimiento
+        - Comunidad
+    validations:
+      required: true
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objetivo
+      description: "¿Qué resultado se espera?"
+      placeholder: "Explica el resultado final esperado."
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Pasos y detalles
+      description: "Incluye comandos, enlaces o contexto necesario. Nunca incluyas secretos."
+      placeholder: |
+        1. ...
+        2. ...
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Criterios para darla por completada
+      placeholder: |
+        - [ ] ...
+        - [ ] ...
+    validations:
+      required: true
+  - type: input
+    id: due_date
+    attributes:
+      label: Fecha límite
+      description: "Usa AAAA-MM-DD; luego copia la fecha al campo Due date del Project."
+      placeholder: "2026-10-30"
+    validations:
+      required: false
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmación
+      options:
+        - label: "Entiendo que debo actualizar el estado y dejar pruebas antes de cerrar la tarea."
+          required: true
